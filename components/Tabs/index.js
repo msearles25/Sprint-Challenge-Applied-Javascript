@@ -13,15 +13,15 @@ axios.get('https://lambda-times-backend.herokuapp.com/topics')
         tab(response.data.topics);
     })
     .catch(err => {
-        console.log('You messed up the page', error);
-    })
+        console.log('You messed up the page', err);
+    });
 
-    function tab(array) {
-        const topics = document.querySelector('.topics');
+function tab(array) {
+    const topics = document.querySelector('.topics');
 
-        array.forEach(tabName => {
-            topics.appendChild(document.createElement('div')).textContent = tabName;
-        });
+    array.forEach(tabName => {
+        topics.appendChild(document.createElement('div')).textContent = tabName;
+    });
 
-        return tab;
-    }
+    return topics;
+}
